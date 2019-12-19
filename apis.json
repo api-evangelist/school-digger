@@ -1,0 +1,96 @@
+{
+    "name": "School Digger",
+    "description": "<p>Start your search for a great school at SchoolDigger.com! We have test scores, rankings, school and district boundaries, student\/teacher ratios, ethnic makeup, and scores of other useful metrics and information for over 120,000 elementary, middle, and high schools in the United States!<\/p>",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/schooldigger.png",
+    "tags": [
+        "general data",
+        "have api",
+        "have swagger",
+        "schools"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/school-digger\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "School Digger API V1",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/schooldigger.png",
+            "humanURL": "http:\/\/schooldigger.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/school-digger-api-v1.json"
+                }
+            ]
+        },
+        {
+            "name": "SchoolDigger API V1",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/schooldigger.png",
+            "humanURL": "http:\/\/schooldigger.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/schooldigger-api-v1.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Change Logs",
+            "url": "https:\/\/developer.schooldigger.com\/changelog"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/developer.schooldigger.com\/?r=schooldigger"
+        },
+        {
+            "type": "Documentation",
+            "url": "https:\/\/developer.schooldigger.com\/docs"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28498-2019-09-04-10-50-10.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28498-2019-09-04-10-50-40.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28498-2019-09-04-10-50-57.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28498-2019-09-04-10-51-05.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28498-2019-09-04-10-51-23.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28498-2019-09-04-10-51-58.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28498-2019-09-04-10-53-32.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28498-2019-09-03-20-53-26.json"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/schooldigger.com"
+        }
+    ]
+}
