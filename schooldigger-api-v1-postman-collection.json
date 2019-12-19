@@ -1,0 +1,591 @@
+{
+    "id": "25dda36fdffca05eb14e0eba80457e49",
+    "name": "SchoolDigger API V1",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "b3fb529df1b4969360397bea90067349",
+            "name": "Returns a list of districts",
+            "url": "http:\/\/api.schooldigger.com\/\/v1\/districts",
+            "description": "Search the SchoolDigger database for districts. You may use any combination of criteria as query parameters.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "st",
+                    "description": "Two character state (e.g. 'CA') - required",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "q",
+                    "description": "Search term - note: will match district name or city (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "city",
+                    "description": "Search for districts in this city (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "zip",
+                    "description": "Search for districts in this 5-digit zip code (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "nearLatitude",
+                    "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (e.g. 44.982560) (optional) (Pro, Enterprise API levels only. Enterprise API level will flag districts that include lat\/long in its attendance boundary.)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "nearLongitude",
+                    "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (e.g. -124.289185) (optional) (Pro, Enterprise API levels only. Enterprise API level will flag districts that include lat\/long in its attendance boundary.)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "boundaryAddress",
+                    "description": "Full U.S. address: flag returned districts that include this address in its attendance boundary. Example: '123 Main St. AnyTown CA 90001' (optional) (Enterprise API level only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "distanceMiles",
+                    "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (Default 5 miles) (optional) (Pro, Enterprise API levels only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "isInBoundaryOnly",
+                    "description": "Return only the districts that include given location (nearLatitdue\/nearLongitude) or (nearAddress) in its attendance boundary (Enterprise API level only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "boxLatitudeNW",
+                    "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "boxLongitudeNW",
+                    "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "boxLatitudeSE",
+                    "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "boxLongitudeSE",
+                    "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "Page number to retrieve (optional, default: 1)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "perPage",
+                    "description": "Number of districts to retrieve on a page (50 max) (optional, default: 10)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sortBy",
+                    "description": "Sort list. Values are: districtname, distance, rank. For descending order, preceed with '-' i.e. -districtname (optional, default: districtname)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appID",
+                    "description": "Your API app id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appKey",
+                    "description": "Your API app key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "rawModeData": ""
+        },
+        {
+            "id": "73b3ed0c4089ba9f2cfc5a6eacbf5a5d",
+            "name": "Returns a detailed record for one district",
+            "url": "http:\/\/api.schooldigger.com\/\/v1\/districts\/{id}",
+            "description": "Retrieve a single district record from the SchoolDigger database",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The 7 digit District ID (e.g. 0642150)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appID",
+                    "description": "Your API app id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appKey",
+                    "description": "Your API app key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "rawModeData": ""
+        },
+        {
+            "id": "c4388f2c2ac9df40d7bc4f279e32ff98",
+            "name": "Returns a SchoolDigger district ranking list",
+            "url": "http:\/\/api.schooldigger.com\/\/v1\/rankings\/districts\/{st}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "st",
+                    "description": "Two character state (e.g. 'CA')",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "year",
+                    "description": "The ranking year (leave blank for most recent year)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "Page number to retrieve (optional, default: 1)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "perPage",
+                    "description": "Number of districts to retrieve on a page (50 max) (optional, default: 10)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appID",
+                    "description": "Your API app id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appKey",
+                    "description": "Your API app key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "rawModeData": ""
+        },
+        {
+            "id": "7fdfb555c86326f5573d028183adb016",
+            "name": "Returns a SchoolDigger school ranking list",
+            "url": "http:\/\/api.schooldigger.com\/\/v1\/rankings\/schools\/{st}",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "st",
+                    "description": "Two character state (e.g. 'CA')",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "year",
+                    "description": "The ranking year (leave blank for most recent year)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "level",
+                    "description": "Level of ranking: 'Elementary', 'Middle', or 'High'",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "Page number to retrieve (optional, default: 1)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "perPage",
+                    "description": "Number of districts to retrieve on a page (50 max) (optional, default: 10)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appID",
+                    "description": "Your API app id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appKey",
+                    "description": "Your API app key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "rawModeData": ""
+        },
+        {
+            "id": "6c55d227692d74ca7f08f1e3e3ddd3ba",
+            "name": "Returns a list of schools",
+            "url": "http:\/\/api.schooldigger.com\/\/v1\/schools",
+            "description": "Search the SchoolDigger database for schools. You may use any combination of criteria as query parameters.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "st",
+                    "description": "Two character state (e.g. 'CA') - required",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "q",
+                    "description": "Search term - note: will match district name or city (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "districtID",
+                    "description": "Search for schools within this district (7 digit district id) (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "level",
+                    "description": "Level of ranking: 'Elementary', 'Middle', or 'High'",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "city",
+                    "description": "Search for districts in this city (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "zip",
+                    "description": "Search for districts in this 5-digit zip code (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "isMagnet",
+                    "description": "True = return only magnet schools, False = return only non-magnet schools (optional) (Pro, Enterprise API levels only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "isCharter",
+                    "description": "True = return only charter schools, False = return only non-charter schools (optional) (Pro, Enterprise API levels only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "isVirtual",
+                    "description": "True = return only virtual schools, False = return only non-virtual schools (optional) (Pro, Enterprise API levels only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "isTitleI",
+                    "description": "True = return only Title I schools, False = return only non-Title I schools (optional) (Pro, Enterprise API levels only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "isTitleISchoolwide",
+                    "description": "True = return only Title I schoolwide schools, False = return only non-Title I Schoolwide schools (optional) (Pro, Enterprise API levels only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "nearLatitude",
+                    "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (e.g. 44.982560) (optional) (Pro, Enterprise API levels only. Enterprise API level will flag districts that include lat\/long in its attendance boundary.)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "nearLongitude",
+                    "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (e.g. -124.289185) (optional) (Pro, Enterprise API levels only. Enterprise API level will flag districts that include lat\/long in its attendance boundary.)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "boundaryAddress",
+                    "description": "Full U.S. address: flag returned districts that include this address in its attendance boundary. Example: '123 Main St. AnyTown CA 90001' (optional) (Enterprise API level only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "distanceMiles",
+                    "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (Default 5 miles) (optional) (Pro, Enterprise API levels only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "isInBoundaryOnly",
+                    "description": "Return only the districts that include given location (nearLatitdue\/nearLongitude) or (nearAddress) in its attendance boundary (Enterprise API level only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "boxLatitudeNW",
+                    "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "boxLongitudeNW",
+                    "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "boxLatitudeSE",
+                    "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "boxLongitudeSE",
+                    "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "Page number to retrieve (optional, default: 1)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "perPage",
+                    "description": "Number of districts to retrieve on a page (50 max) (optional, default: 10)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sortBy",
+                    "description": "Sort list. Values are: districtname, distance, rank. For descending order, preceed with '-' i.e. -districtname (optional, default: districtname)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appID",
+                    "description": "Your API app id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appKey",
+                    "description": "Your API app key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "rawModeData": ""
+        },
+        {
+            "id": "fb88b87bb098a27c778dc5b4fefe9e79",
+            "name": "Returns a detailed record for one school",
+            "url": "http:\/\/api.schooldigger.com\/\/v1\/schools\/{id}",
+            "description": "Retrieve a school record from the SchoolDigger database",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "The 7 digit District ID (e.g. 0642150)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appID",
+                    "description": "Your API app id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "appKey",
+                    "description": "Your API app key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "rawModeData": ""
+        }
+    ]
+}
