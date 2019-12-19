@@ -1,0 +1,1296 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v1",
+        "title": "School Digger API V1",
+        "description": "Get detailed data on over 120,000 schools and 18,500 districts in the U.S.",
+        "termsOfService": "https:\/\/developer.schooldigger.com\/termsofservice"
+    },
+    "servers": [
+        "httpsapi.schooldigger.com\/"
+    ],
+    "paths": {
+        "\/v1\/districts": {
+            "get": {
+                "summary": "Returns a list of districts",
+                "description": "Search the SchoolDigger database for districts. You may use any combination of criteria as query parameters.",
+                "operationId": "DistrictsGetAllDistricts",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "st",
+                        "in": "query",
+                        "description": "Two character state (e.g. 'CA') - required"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "Search term - note: will match district name or city (optional)"
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "Search for districts in this city (optional)"
+                    },
+                    {
+                        "name": "zip",
+                        "in": "query",
+                        "description": "Search for districts in this 5-digit zip code (optional)"
+                    },
+                    {
+                        "name": "nearLatitude",
+                        "in": "query",
+                        "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (e.g. 44.982560) (optional) (Pro, Enterprise API levels only. Enterprise API level will flag districts that include lat\/long in its attendance boundary.)"
+                    },
+                    {
+                        "name": "nearLongitude",
+                        "in": "query",
+                        "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (e.g. -124.289185) (optional) (Pro, Enterprise API levels only. Enterprise API level will flag districts that include lat\/long in its attendance boundary.)"
+                    },
+                    {
+                        "name": "boundaryAddress",
+                        "in": "query",
+                        "description": "Full U.S. address: flag returned districts that include this address in its attendance boundary. Example: '123 Main St. AnyTown CA 90001' (optional) (Enterprise API level only)"
+                    },
+                    {
+                        "name": "distanceMiles",
+                        "in": "query",
+                        "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (Default 5 miles) (optional) (Pro, Enterprise API levels only)"
+                    },
+                    {
+                        "name": "isInBoundaryOnly",
+                        "in": "query",
+                        "description": "Return only the districts that include given location (nearLatitdue\/nearLongitude) or (nearAddress) in its attendance boundary (Enterprise API level only)"
+                    },
+                    {
+                        "name": "boxLatitudeNW",
+                        "in": "query",
+                        "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)"
+                    },
+                    {
+                        "name": "boxLongitudeNW",
+                        "in": "query",
+                        "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)"
+                    },
+                    {
+                        "name": "boxLatitudeSE",
+                        "in": "query",
+                        "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)"
+                    },
+                    {
+                        "name": "boxLongitudeSE",
+                        "in": "query",
+                        "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number to retrieve (optional, default: 1)"
+                    },
+                    {
+                        "name": "perPage",
+                        "in": "query",
+                        "description": "Number of districts to retrieve on a page (50 max) (optional, default: 10)"
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "description": "Sort list. Values are: districtname, distance, rank. For descending order, preceed with '-' i.e. -districtname (optional, default: districtname)"
+                    },
+                    {
+                        "name": "appID",
+                        "in": "query",
+                        "description": "Your API app id"
+                    },
+                    {
+                        "name": "appKey",
+                        "in": "query",
+                        "description": "Your API app key"
+                    }
+                ]
+            }
+        },
+        "\/v1\/districts\/{id}": {
+            "get": {
+                "summary": "Returns a detailed record for one district",
+                "description": "Retrieve a single district record from the SchoolDigger database",
+                "operationId": "DistrictsGetDistrict",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The 7 digit District ID (e.g. 0642150)"
+                    },
+                    {
+                        "name": "appID",
+                        "in": "query",
+                        "description": "Your API app id"
+                    },
+                    {
+                        "name": "appKey",
+                        "in": "query",
+                        "description": "Your API app key"
+                    }
+                ]
+            }
+        },
+        "\/v1\/rankings\/districts\/{st}": {
+            "get": {
+                "summary": "Returns a SchoolDigger district ranking list",
+                "description": "",
+                "operationId": "V1RankingsDistrictsStGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "st",
+                        "in": "path",
+                        "description": "Two character state (e.g. 'CA')"
+                    },
+                    {
+                        "name": "year",
+                        "in": "query",
+                        "description": "The ranking year (leave blank for most recent year)"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number to retrieve (optional, default: 1)"
+                    },
+                    {
+                        "name": "perPage",
+                        "in": "query",
+                        "description": "Number of districts to retrieve on a page (50 max) (optional, default: 10)"
+                    },
+                    {
+                        "name": "appID",
+                        "in": "query",
+                        "description": "Your API app id"
+                    },
+                    {
+                        "name": "appKey",
+                        "in": "query",
+                        "description": "Your API app key"
+                    }
+                ]
+            }
+        },
+        "\/v1\/rankings\/schools\/{st}": {
+            "get": {
+                "summary": "Returns a SchoolDigger school ranking list",
+                "description": "",
+                "operationId": "V1RankingsSchoolsStGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "st",
+                        "in": "path",
+                        "description": "Two character state (e.g. 'CA')"
+                    },
+                    {
+                        "name": "year",
+                        "in": "query",
+                        "description": "The ranking year (leave blank for most recent year)"
+                    },
+                    {
+                        "name": "level",
+                        "in": "query",
+                        "description": "Level of ranking: 'Elementary', 'Middle', or 'High'"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number to retrieve (optional, default: 1)"
+                    },
+                    {
+                        "name": "perPage",
+                        "in": "query",
+                        "description": "Number of districts to retrieve on a page (50 max) (optional, default: 10)"
+                    },
+                    {
+                        "name": "appID",
+                        "in": "query",
+                        "description": "Your API app id"
+                    },
+                    {
+                        "name": "appKey",
+                        "in": "query",
+                        "description": "Your API app key"
+                    }
+                ]
+            }
+        },
+        "\/v1\/schools": {
+            "get": {
+                "summary": "Returns a list of schools",
+                "description": "Search the SchoolDigger database for schools. You may use any combination of criteria as query parameters.",
+                "operationId": "SchoolsGetAllSchools",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "st",
+                        "in": "query",
+                        "description": "Two character state (e.g. 'CA') - required"
+                    },
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "Search term - note: will match district name or city (optional)"
+                    },
+                    {
+                        "name": "districtID",
+                        "in": "query",
+                        "description": "Search for schools within this district (7 digit district id) (optional)"
+                    },
+                    {
+                        "name": "level",
+                        "in": "query",
+                        "description": "Level of ranking: 'Elementary', 'Middle', or 'High'"
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "Search for districts in this city (optional)"
+                    },
+                    {
+                        "name": "zip",
+                        "in": "query",
+                        "description": "Search for districts in this 5-digit zip code (optional)"
+                    },
+                    {
+                        "name": "isMagnet",
+                        "in": "query",
+                        "description": "True = return only magnet schools, False = return only non-magnet schools (optional) (Pro, Enterprise API levels only)"
+                    },
+                    {
+                        "name": "isCharter",
+                        "in": "query",
+                        "description": "True = return only charter schools, False = return only non-charter schools (optional) (Pro, Enterprise API levels only)"
+                    },
+                    {
+                        "name": "isVirtual",
+                        "in": "query",
+                        "description": "True = return only virtual schools, False = return only non-virtual schools (optional) (Pro, Enterprise API levels only)"
+                    },
+                    {
+                        "name": "isTitleI",
+                        "in": "query",
+                        "description": "True = return only Title I schools, False = return only non-Title I schools (optional) (Pro, Enterprise API levels only)"
+                    },
+                    {
+                        "name": "isTitleISchoolwide",
+                        "in": "query",
+                        "description": "True = return only Title I schoolwide schools, False = return only non-Title I Schoolwide schools (optional) (Pro, Enterprise API levels only)"
+                    },
+                    {
+                        "name": "nearLatitude",
+                        "in": "query",
+                        "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (e.g. 44.982560) (optional) (Pro, Enterprise API levels only. Enterprise API level will flag districts that include lat\/long in its attendance boundary.)"
+                    },
+                    {
+                        "name": "nearLongitude",
+                        "in": "query",
+                        "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (e.g. -124.289185) (optional) (Pro, Enterprise API levels only. Enterprise API level will flag districts that include lat\/long in its attendance boundary.)"
+                    },
+                    {
+                        "name": "boundaryAddress",
+                        "in": "query",
+                        "description": "Full U.S. address: flag returned districts that include this address in its attendance boundary. Example: '123 Main St. AnyTown CA 90001' (optional) (Enterprise API level only)"
+                    },
+                    {
+                        "name": "distanceMiles",
+                        "in": "query",
+                        "description": "Search for districts within (distanceMiles) of (nearLatitude)\/(nearLongitude) (Default 5 miles) (optional) (Pro, Enterprise API levels only)"
+                    },
+                    {
+                        "name": "isInBoundaryOnly",
+                        "in": "query",
+                        "description": "Return only the districts that include given location (nearLatitdue\/nearLongitude) or (nearAddress) in its attendance boundary (Enterprise API level only)"
+                    },
+                    {
+                        "name": "boxLatitudeNW",
+                        "in": "query",
+                        "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)"
+                    },
+                    {
+                        "name": "boxLongitudeNW",
+                        "in": "query",
+                        "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)"
+                    },
+                    {
+                        "name": "boxLatitudeSE",
+                        "in": "query",
+                        "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)"
+                    },
+                    {
+                        "name": "boxLongitudeSE",
+                        "in": "query",
+                        "description": "Search for districts within a 'box' defined by (BoxLatitudeNW\/BoxLongitudeNW) to (BoxLongitudeSE\/BoxLatitudeSE) (optional)"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number to retrieve (optional, default: 1)"
+                    },
+                    {
+                        "name": "perPage",
+                        "in": "query",
+                        "description": "Number of districts to retrieve on a page (50 max) (optional, default: 10)"
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "description": "Sort list. Values are: districtname, distance, rank. For descending order, preceed with '-' i.e. -districtname (optional, default: districtname)"
+                    },
+                    {
+                        "name": "appID",
+                        "in": "query",
+                        "description": "Your API app id"
+                    },
+                    {
+                        "name": "appKey",
+                        "in": "query",
+                        "description": "Your API app key"
+                    }
+                ]
+            }
+        },
+        "\/v1\/schools\/{id}": {
+            "get": {
+                "summary": "Returns a detailed record for one school",
+                "description": "Retrieve a school record from the SchoolDigger database",
+                "operationId": "SchoolsGetSchool",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The 7 digit District ID (e.g. 0642150)"
+                    },
+                    {
+                        "name": "appID",
+                        "in": "query",
+                        "description": "Your API app id"
+                    },
+                    {
+                        "name": "appKey",
+                        "in": "query",
+                        "description": "Your API app key"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "APIBoundary": {
+                "type": "object",
+                "properties": {
+                    "hasBoundary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "polylineCollection": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APICounty": {
+                "type": "object",
+                "properties": {
+                    "countyName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "countyURL": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APIDistrict": {
+                "type": "object",
+                "properties": {
+                    "districtID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "districtName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "districtYearlyDetails": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "highGrade": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isWithinBoundary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lowGrade": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberAlternativeSchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberHighSchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberMiddleSchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberPrimarySchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberTotalSchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "phone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankHistory": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "testScores": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APIDistrict1": {
+                "type": "object",
+                "properties": {
+                    "distance": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "districtID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "districtName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "districtYearlyDetails": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "hasBoundary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "highGrade": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isWithinBoundary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "locationIsWithinBoundary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lowGrade": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberAlternativeSchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberHighSchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberMiddleSchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberPrimarySchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberTotalSchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "phone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankHistory": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "testScores": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APIDistrictList": {
+                "type": "object",
+                "properties": {
+                    "districtList": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfDistricts": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfPages": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APIDistrictListRank": {
+                "type": "object",
+                "properties": {
+                    "districtList": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfDistricts": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfPages": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankCompareYear": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankYear": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankYearCompare": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankYearsAvailable": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APIDistrictSum": {
+                "type": "object",
+                "properties": {
+                    "districtID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "districtName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankURL": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APILEARankHistory": {
+                "type": "object",
+                "properties": {
+                    "rank": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankOf": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankScore": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankStars": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankStatewidePercentage": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "year": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APILEAYearlyDetail": {
+                "type": "object",
+                "properties": {
+                    "numberOfAids": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfCoordsSupervisors": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfEnglishLanguageLearnerStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfGuidanceElem": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfGuidanceSecondary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfGuidanceTotal": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfLEAAdministrators": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfLEASupportStaff": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfLibrarians": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfLibraryStaff": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfOtherSupportStaff": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfSchoolAdminSupportStaff": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfSchoolAdministrators": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfSpecialEdStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfStudentSupportStaff": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfTeachers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfTeachersElementary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfTeachersK": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfTeachersPK": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfTeachersSecondary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "year": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APILatLong": {
+                "type": "object",
+                "properties": {
+                    "latitude": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "longitude": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APILocation": {
+                "type": "object",
+                "properties": {
+                    "city": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "cityURL": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "html": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "stateFull": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "street": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "zip": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "zip4": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "zipURL": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APIPolyline": {
+                "type": "object",
+                "properties": {
+                    "numberEncodedPoints": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "polylineOverlayEncodedPoints": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APIRankHistory": {
+                "type": "object",
+                "properties": {
+                    "averageStandardScore": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rank": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankLevel": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankOf": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankStars": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankStatewidePercentage": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "year": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APISchool": {
+                "type": "object",
+                "properties": {
+                    "highGrade": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isCharterSchool": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isMagnetSchool": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isPrivate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isTitleISchool": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isTitleISchoolwideSchool": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isVirtualSchool": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "locale": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lowGrade": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "phone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateCoed": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateDays": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateHasLibrary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateHours": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateOrientation": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankHistory": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankMovement": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "schoolLevel": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "schoolName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "schoolYearlyDetails": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "schoolid": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "testScores": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "urlCompare": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APISchool1": {
+                "type": "object",
+                "properties": {
+                    "distance": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "hasBoundary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "highGrade": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isCharterSchool": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isMagnetSchool": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isPrivate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isTitleISchool": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isTitleISchoolwideSchool": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isVirtualSchool": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "locationIsWithinBoundary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lowGrade": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "phone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateCoed": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateDays": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateHasLibrary": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateHours": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateOrientation": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankHistory": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankMovement": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "schoolLevel": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "schoolName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "schoolYearlyDetails": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "schoolid": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "urlCompare": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APISchoolList": {
+                "type": "object",
+                "properties": {
+                    "numberOfPages": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfSchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "schoolList": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APISchoolListRank": {
+                "type": "object",
+                "properties": {
+                    "numberOfPages": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfSchools": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankYear": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankYearCompare": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rankYearsAvailable": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "schoolList": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APITestScore": {
+                "type": "object",
+                "properties": {
+                    "meanScaledScore": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numTier1": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numTier2": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numTier3": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numTier4": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numTier5": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberMetStandard": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentMetStandard": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentTier1": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentTier2": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentTier3": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentTier4": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentTier5": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "studentsEligible": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "studentsTested": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APITestScoreWrapper": {
+                "type": "object",
+                "properties": {
+                    "grade": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "test": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tier1": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tier2": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tier3": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tier4": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tier5": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "year": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "APIYearlyDemographics": {
+                "type": "object",
+                "properties": {
+                    "numberOfStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberofAfricanAmericanStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberofAsianStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberofHispanicStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberofIndianStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberofPacificIslanderStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberofTwoOrMoreRaceStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberofUnspecifiedRaceStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberofWhiteStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentFreeDiscLunch": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentofAfricanAmericanStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentofAsianStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentofHispanicStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentofIndianStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentofPacificIslanderStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentofTwoOrMoreRaceStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentofUnspecifiedRaceStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentofWhiteStudents": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "pupilTeacherRatio": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "teachersFulltime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "year": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
