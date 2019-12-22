@@ -1,5 +1,5 @@
 {
-    "id": "14532bbfad2bfa6dddfe32910ae17851",
+    "id": "d70683548497d7b4f8d7e441e48b256a",
     "name": "School Digger API V1",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "ee33c9ddf5f3ede908c0b1aef65c5672",
+            "id": "0f20b534b7dbcb8a0a5bff54ad257f45",
             "name": "Returns a list of districts",
             "url": "httpsapi.schooldigger.com\/\/v1\/districts",
             "description": "Search the SchoolDigger database for districts. You may use any combination of criteria as query parameters.",
@@ -156,11 +156,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "14532bbfad2bfa6dddfe32910ae17851",
+            "collectionId": "d70683548497d7b4f8d7e441e48b256a",
             "rawModeData": ""
         },
         {
-            "id": "df4a478906731e6296ba556f80050696",
+            "id": "b56ceba84924da5fb9b2ea99cff07fd9",
             "name": "Returns a detailed record for one district",
             "url": "httpsapi.schooldigger.com\/\/v1\/districts\/{id}",
             "description": "Retrieve a single district record from the SchoolDigger database",
@@ -201,11 +201,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "14532bbfad2bfa6dddfe32910ae17851",
+            "collectionId": "d70683548497d7b4f8d7e441e48b256a",
             "rawModeData": ""
         },
         {
-            "id": "943d74b4cc159eb60df639536998ed70",
+            "id": "ae96f2932220ba51452e32308747156c",
             "name": "Returns a SchoolDigger district ranking list",
             "url": "httpsapi.schooldigger.com\/\/v1\/rankings\/districts\/{st}",
             "description": "",
@@ -267,11 +267,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "14532bbfad2bfa6dddfe32910ae17851",
+            "collectionId": "d70683548497d7b4f8d7e441e48b256a",
             "rawModeData": ""
         },
         {
-            "id": "de54cfc22d120a363626e4593c87a585",
+            "id": "853219e4e34d72d4db2b6abed69d833e",
             "name": "Returns a SchoolDigger school ranking list",
             "url": "httpsapi.schooldigger.com\/\/v1\/rankings\/schools\/{st}",
             "description": "",
@@ -340,11 +340,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "14532bbfad2bfa6dddfe32910ae17851",
+            "collectionId": "d70683548497d7b4f8d7e441e48b256a",
             "rawModeData": ""
         },
         {
-            "id": "d63d9dd5a9cd1cf63b3d71d8c1cfa484",
+            "id": "988e8b19e636441b89a5c867c50fa1bb",
             "name": "Returns a list of schools",
             "url": "httpsapi.schooldigger.com\/\/v1\/schools",
             "description": "Search the SchoolDigger database for schools. You may use any combination of criteria as query parameters.",
@@ -539,11 +539,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "14532bbfad2bfa6dddfe32910ae17851",
+            "collectionId": "d70683548497d7b4f8d7e441e48b256a",
             "rawModeData": ""
         },
         {
-            "id": "0330b3c72c4540baf68c4547f800da77",
+            "id": "0f4b1984e3840d03c2d10754ab20bc78",
             "name": "Returns a detailed record for one school",
             "url": "httpsapi.schooldigger.com\/\/v1\/schools\/{id}",
             "description": "Retrieve a school record from the SchoolDigger database",
@@ -584,7 +584,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "14532bbfad2bfa6dddfe32910ae17851",
+            "collectionId": "d70683548497d7b4f8d7e441e48b256a",
             "rawModeData": ""
         }
     ]
