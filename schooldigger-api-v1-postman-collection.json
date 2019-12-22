@@ -1,5 +1,5 @@
 {
-    "id": "25dda36fdffca05eb14e0eba80457e49",
+    "id": "f41f07b437ac73d76e972482b4870dac",
     "name": "SchoolDigger API V1",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "b3fb529df1b4969360397bea90067349",
+            "id": "ee601d010b651dda5680117c9eaac1bf",
             "name": "Returns a list of districts",
             "url": "http:\/\/api.schooldigger.com\/\/v1\/districts",
             "description": "Search the SchoolDigger database for districts. You may use any combination of criteria as query parameters.",
@@ -156,11 +156,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "collectionId": "f41f07b437ac73d76e972482b4870dac",
             "rawModeData": ""
         },
         {
-            "id": "73b3ed0c4089ba9f2cfc5a6eacbf5a5d",
+            "id": "a8a351b2b1c8d04ee4541dfa8e11055d",
             "name": "Returns a detailed record for one district",
             "url": "http:\/\/api.schooldigger.com\/\/v1\/districts\/{id}",
             "description": "Retrieve a single district record from the SchoolDigger database",
@@ -201,11 +201,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "collectionId": "f41f07b437ac73d76e972482b4870dac",
             "rawModeData": ""
         },
         {
-            "id": "c4388f2c2ac9df40d7bc4f279e32ff98",
+            "id": "7a7beb25a14b432622c0bb2f0c0fa3aa",
             "name": "Returns a SchoolDigger district ranking list",
             "url": "http:\/\/api.schooldigger.com\/\/v1\/rankings\/districts\/{st}",
             "description": "",
@@ -267,11 +267,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "collectionId": "f41f07b437ac73d76e972482b4870dac",
             "rawModeData": ""
         },
         {
-            "id": "7fdfb555c86326f5573d028183adb016",
+            "id": "c83bbf651b27e29c1da63b076be274c8",
             "name": "Returns a SchoolDigger school ranking list",
             "url": "http:\/\/api.schooldigger.com\/\/v1\/rankings\/schools\/{st}",
             "description": "",
@@ -340,11 +340,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "collectionId": "f41f07b437ac73d76e972482b4870dac",
             "rawModeData": ""
         },
         {
-            "id": "6c55d227692d74ca7f08f1e3e3ddd3ba",
+            "id": "91c9cddb8a04950a787dccad2b824bb4",
             "name": "Returns a list of schools",
             "url": "http:\/\/api.schooldigger.com\/\/v1\/schools",
             "description": "Search the SchoolDigger database for schools. You may use any combination of criteria as query parameters.",
@@ -539,11 +539,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "collectionId": "f41f07b437ac73d76e972482b4870dac",
             "rawModeData": ""
         },
         {
-            "id": "fb88b87bb098a27c778dc5b4fefe9e79",
+            "id": "651e8f0c20b8b2435ad4addfdf9184a4",
             "name": "Returns a detailed record for one school",
             "url": "http:\/\/api.schooldigger.com\/\/v1\/schools\/{id}",
             "description": "Retrieve a school record from the SchoolDigger database",
@@ -584,7 +584,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "25dda36fdffca05eb14e0eba80457e49",
+            "collectionId": "f41f07b437ac73d76e972482b4870dac",
             "rawModeData": ""
         }
     ]
